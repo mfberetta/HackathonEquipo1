@@ -1,35 +1,35 @@
-import servicioProductos from '../servicios/soft.js'
+import servicioSoft from '../servicios/soft.js'
 
 export default {
-    getProductos: async(req, res) => { //vista de productos
-        return res.render('productos.ejs')
-    },
+    // getSoft: async(req, res) => { //vista de productos
+    //     return res.render('productos.ejs')
+    // },
 
-    getProductosApi: async(req, res, next) => { //Devuelve todos los productos
+    getSoftApi: async(req, res, next) => { //Devuelve todos los productos
         try{
-            const productos = await servicioProductos.getAll()
-            res.json(productos)
+            const soft = await servicioSoft.getAll()
+            res.json(soft)
         }
         catch(error){
             next(error)
         }
     },
 
-    getByIdProductosApi: async(req, res, next) => { //Devuelve producto por id
+    getByIdSoftApi: async(req, res, next) => { //Devuelve producto por id
         try{ 
             let id = req.params.id;
-            const producto = await servicioProductos.getById(id)
-            if(producto) res.json(producto) //devuelve el producto
-            else res.json({ error : 'producto no encontrado' })
+            const soft = await servicioSoft.getById(id)
+            if(soft) res.json(soft) //devuelve el producto
+            else res.json({ error : 'soft no encontrado' })// se cambia la palabra productos por soft
         }
         catch(error){
             next(error)
         }
     },
 
-    postProductosApi: async (req, res, next) => { //Agrega producto
+    postSoftApi: async (req, res, next) => { //Agrega producto
         try{
-            const id = await servicioProductos.save(req.body)
+            const id = await servicioSoft.save(req.body)
             if(id) res.json({id: id})
             else res.json({ error : 'campos incompletos o no válidos' })
         }
@@ -38,29 +38,29 @@ export default {
         }
     },
 
-    deleteByIdProductosApi: async (req,res,next)=>{ //Elimina producto por id
+    deleteByIdSoftApi: async (req,res,next)=>{ //Elimina producto por id
         try{ 
             let id = req.params.id;
-            const resultado = await servicioProductos.deleteByIdProducto(id)
+            const resultado = await servicioSoft.deleteByIdProducto(id)
             if(resultado){
-                res.json({ resultado: 'producto eliminado' })
+                res.json({ resultado: 'soft eliminado' })
             } 
-            else res.json({ error : 'producto no encontrado' })
+            else res.json({ error : 'soft no encontrado' })
         }
         catch(error){
             next(error)
         }
     },
 
-    putByIdProductosApi: async (req,res,next)=>{ //Actualiza productos por id
+    putByIdSoftApi: async (req,res,next)=>{ //Actualiza productos por id
         try{ 
             let id = req.params.id;
-            let productoMod = req.body
-            let resultado = await servicioProductos.update(id,productoMod) 
+            let softMod = req.body
+            let resultado = await servicioSoft.update(id,softMod) 
             if(resultado){
-                res.json({ resultado: 'producto actualizado' })
+                res.json({ resultado: 'soft actualizado' })
             } 
-            else res.json({ error : 'producto no encontrado y/o campos incompletos o no válidos' })
+            else res.json({ error : 'soft no encontrado y/o campos incompletos o no válidos' })
         }
         catch(error){
             next(error)

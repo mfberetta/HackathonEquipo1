@@ -1,5 +1,3 @@
-[2022-03-17T15:17:25.476] [WARN] default - Ruta GET /socket.io/socket.io.js no implementada
-[2022-03-17T15:17:26.363] [WARN] default - Ruta GET /carrito no implementada
-[2022-03-17T15:17:26.680] [WARN] default - Ruta GET /socket.io/socket.io.js no implementada
-[2022-03-17T15:17:46.347] [WARN] default - Ruta GET /access no implementada
-[2022-03-17T15:18:16.340] [WARN] default - Ruta GET /api/access no implementada
+[2022-03-17T19:48:47.900] [ERROR] default - ReferenceError: acess is not defined
+    at getAccessApi (file:///C:/Users/Public/HackathonEquipo1/src/controllers/access.js:9:33)
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)

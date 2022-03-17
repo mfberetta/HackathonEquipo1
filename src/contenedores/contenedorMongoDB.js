@@ -34,7 +34,10 @@ class ContenedorMongoDb {
         //Devuelve según el email de la query.
         return await this.coleccion.find(query)
     }
-
+    async getByQuery(query){ 
+        //Devuelve según el email de la query.
+        return await this.coleccion.find(query)
+    }
     async getById(id){
         //Recibe un id y devuelve registro con ese id, o null si no está.
         return await this.coleccion.findOne({id:id},{_id:0,__v:0})

@@ -26,6 +26,12 @@ export default {
         if(producto) return producto
         else return null
     },
+    
+    getByQuery: async(email) => { //Devuelve producto por id
+        const courses = await trainingDao.getByQuery({'email': email})
+        if(courses) return courses
+        else return null
+    },
 
     save: async (productoNew) => { //Agrega producto
         //verifica campos

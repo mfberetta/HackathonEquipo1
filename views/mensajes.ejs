@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./head') %>
+
+    <body>
+
+        <%- include('./menu') %>
+        
+        <div class="container mt-3">
+            <div class="jumbotron">
+                <h2 style="color:blue;" id="centro_mensajes"></h2>
+                <br>
+                <form id="formEnviarMensaje">
+                    <div class="form-group">
+                        <input id="mensaje" class="form-control" type="text" name="mensaje" placeholder="Escriba su mensaje aqui....">
+                    </div>
+                    <button class="btn btn-primary mt-3 mb-5" id='btnEnviar' onclick='enviarMensaje()'>Enviar!</button>
+                </form>
+                <div id="mensajes"></div>
+                <button class="btn btn-success mt-3 mb-5" id='btnFiltro' onclick='filtrarMensajes()'>Mis mensajes</button>
+            </div>
+        </div>
+        <script src="js/mensajes.js"></script>
+    </body>
+</html>

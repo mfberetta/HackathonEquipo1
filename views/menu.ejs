@@ -1,0 +1,23 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">eCommerse</a>
+        <div class="d-flex">
+            <a class="nav-link" href="/info">Info</a>
+            <a class="nav-link" href="/productos">Productos</a>
+            <a class="nav-link" href="/carrito">Carrito</a>
+            <a class="nav-link" href="/ordenes">Ordenes</a>
+            <a class="nav-link" href="/chat">Chat</a>
+            <a class="nav-link" id="usuario"></a>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById("usuario").innerHTML= localStorage.getItem('email')
+    function logout() {
+        localStorage.removeItem('access_token')
+        localStorage.removeItem('email')
+        location.href ='/login'
+    }
+</script>

@@ -1,0 +1,10 @@
+{{#if mensajes.length}}
+    {{#each mensajes}}
+        <p>
+            <a class="mail">{{this.email}}<a>
+            <a class="mensaje"> {{this.tipo}} </a>  
+            <a class="time">[{{this.fyh}}]:</a>
+            <a class="mensaje"> {{this.texto}} </a> 
+        </p>
+    {{/each}}
+{{/if}}

@@ -40,7 +40,7 @@ routerSoft.get('/', controllerSoft.getByEmailSoftApi)
 routerSoft.post('/', authentication, controllerSoft.postSoftApi)
 
 //DELETE /:id -> elimina un producto según su id.
-//routerSoft.delete('/:id', authentication, controllerSoft.deleteByIdSoftApi)
+routerSoft.delete('/:id', authentication, controllerSoft.deleteByIdSoftApi)
 
 //PUT /:id -> recibe y actualiza un producto según su id.
 routerSoft.put('/:id', authentication, controllerSoft.putByIdSoftApi)

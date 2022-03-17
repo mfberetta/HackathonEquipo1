@@ -17,8 +17,8 @@ import { softDao } from '../daos/soft/index.js'
 
 export default {
 
-    getByQuery: async(email) => {
-        const soft = await softDao.getByQuery({ 'email': email });
+    getByQuery: async(query) => {
+        const soft = await softDao.getByQuery({ query });
         if (soft) return soft
         else return null
 
@@ -30,27 +30,17 @@ export default {
     },
 
     save: async(softNew) => { //Agrega producto
-        //verifica campos
-        /* if (!softNew.codigo) return null
-         if (!softNew.nombre) return null
-         if (!softNew.descripcion) return null
-         if (!softNew.categoria) return null*/
-        // if(!verificaLink(softNew.foto)) return null
-        // if(!verificaPrecio(softNew.precio))  return null
-        // if(!verificaStock(softNew.stock)) return null
-
-        //softNew = Object.assign({ timestamp: Date.now() }, softNew)
         const id = await softDao.save(softNew)
         return id
     },
 
-    // deleteByIdSoft: async(id) => { //Elimina producto por id
-    //     const soft = await softDao.getById(id)
-    //     if (soft) {
-    //         const operacion = await softDao.deleteById(id)
-    //         return true
-    //     } else return null
-    // },
+    deleteByIdSoft: async(id) => { //Elimina producto por id
+        const soft = await softDao.getById(id)
+        if (soft) {
+            const operacion = await softDao.deleteById(id)
+            return true
+        } else return null
+    },
 
     update: async(id, softMod) => { //Actualiza productos por id
         if (!softMod.id) softMod = Object.assign({ id: id }, softMod)

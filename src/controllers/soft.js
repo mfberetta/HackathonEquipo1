@@ -1,4 +1,4 @@
-import servicioProductos from '../servicios/productos.js'
+import servicioProductos from '../servicios/soft.js'
 
 export default {
     getProductos: async(req, res) => { //vista de productos

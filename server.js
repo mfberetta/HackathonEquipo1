@@ -44,5 +44,5 @@ app.use((req, res) => {
     }
 })
 /*-----------------------------------------------------------*/
-export default httpServer
+export default app
 

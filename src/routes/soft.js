@@ -1,4 +1,4 @@
-import controllerProductos from '../controllers/productos.js'
+import controllerProductos from '../controllers/soft.js'
 import {authentication} from '../../utils/jwt.js'
 import config from '../../config/config.js'
 /*-----------------------------------------------------------*/

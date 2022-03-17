@@ -1,4 +1,4 @@
-import { productosDao } from '../daos/productos/index.js'
+import { accessDao } from '../daos/access/index.js'
 
 function verificaPrecio(input){
     const regex = /^[0-9]+(\.[0-9]+)?$/
@@ -17,12 +17,12 @@ function verificaLink(input){
 
 export default {
     getAll: async() => { //Devuelve todos los productos
-        const productos = await productosDao.getAll()
+        const productos = await accessDao.getAll()
         return productos
     },
 
     getById: async(id) => { //Devuelve producto por id
-        const producto = await productosDao.getById(id)
+        const producto = await accessDao.getById(id)
         if(producto) return producto
         else return null
     },
@@ -38,14 +38,14 @@ export default {
         if(!verificaStock(productoNew.stock)) return null
         
         productoNew = Object.assign({timestamp: Date.now()}, productoNew)
-        const id = await productosDao.save(productoNew)
+        const id = await accessDao.save(productoNew)
         return id
     },
 
     deleteByIdProducto: async (id)=>{ //Elimina producto por id
-        const producto = await productosDao.getById(id)
+        const producto = await accessDao.getById(id)
         if(producto){
-            const operacion = await productosDao.deleteById(id)
+            const operacion = await accessDao.deleteById(id)
             return true
         } 
         else return null
@@ -65,9 +65,9 @@ export default {
         if(!verificaPrecio(productoMod.precio))  return null
         if(!verificaStock(productoMod.stock)) return null
         
-        const producto = await productosDao.getById(id)
+        const producto = await accessDao.getById(id)
         if(producto){
-            const operacion = await productosDao.update(productoMod)
+            const operacion = await accessDao.update(productoMod)
             return true
         }
         else return null    

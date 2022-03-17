@@ -13,7 +13,7 @@ app.use(cors())
 /*-----------------------------------------------------------*/
 //Router for API access
 import routerAccess from './src/routes/access.js'
-app.use('/api/acess', routerAccess)
+app.use('/api/access', routerAccess)
 /*-----------------------------------------------------------*/
 //Router for API training
 import routerTraining from './src/routes/training.js'

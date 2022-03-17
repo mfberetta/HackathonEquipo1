@@ -5,8 +5,8 @@ dotenv.config()
 const EXPIRACION = process.env.TIEMPO_SESION
 const PRIVATE_KEY = 'notelovoyadecir'
 
-export const generateAuthToken = (nombre) => {
-  const token = jwt.sign({ nombre: nombre }, PRIVATE_KEY, { expiresIn: EXPIRACION });
+export const generateAuthToken = (email) => {
+  const token = jwt.sign({ email }, PRIVATE_KEY, { expiresIn: EXPIRACION });
   return token;
 }
 

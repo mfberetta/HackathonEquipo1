@@ -23,6 +23,7 @@ React JS
 
 ## 💾 Heroku 
 `https://hackteam1.herokuapp.com/`
+`https://techstation-equipo1.herokuapp.com/`
 
 ## 🧾 Base de datos
 Por el momento toda nuestra base de datos esta hard-codeada, lo ideal seria tener un administrador

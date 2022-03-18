@@ -20,7 +20,7 @@ export default {
         if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
             return null //mail invalido
         }
-        usuario = await usuariosDao.getByEmail({'email':email}) //busca en la persistencia por email
+        usuario = await usuariosDao.getByQuery({'email':email}) //busca en la persistencia por email
         if (usuario.length != 0) {
             return null //usuario ya existe
         }

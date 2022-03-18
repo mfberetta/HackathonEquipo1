@@ -19,9 +19,7 @@ routerSoft.use((err, req, res, next) => {
     /*-----------------------------------------------------------*/
     // Rutas de API
     //GET -> devuelve todos los productos
-routerSoft.get('/', controllerSoft.getByEmailSoftApi)
-
-
+routerSoft.get('/', authentication,controllerSoft.getByEmailSoftApi)
 
 //POST -> recibe y agrega un producto, y lo devuelve con su id asignado.
 routerSoft.post('/', authentication, controllerSoft.postSoftApi)

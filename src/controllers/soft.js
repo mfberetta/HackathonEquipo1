@@ -6,7 +6,7 @@ export default {
     getByEmailSoftApi: async(req, res, next) => {
 
         try {
-            let user = req.user;
+            let user = req.user.email
             const soft = await servicioSoft.getByQuery(user)
             if (soft) res.json(soft) //return credentials
             else res.json({ error: 'soft no encontrado' })

@@ -31,21 +31,8 @@ routerTraining.use((err, req, res, next) => {
 })
 /*-----------------------------------------------------------*/
 // Rutas de API
-//GET -> devuelve todos los productos
+//GET -> Get info of courses by email user
 routerTraining.get('/', authentication, controllerTraining.getByEmailCoursesApi)
-//routerTraining.get('/',controllerTraining.getCoursesApi)
- 
-//GET /:id -> devuelve un producto según su id.
-//routerTraining.get('/:id',controllerTraining.getByEmailCoursesApi)
-
-//POST -> recibe y agrega un producto, y lo devuelve con su id asignado.
-//routerTraining.post('/', authentication,controllerTraining.postProductosApi)
-
-//DELETE /:id -> elimina un producto según su id.
-//routerTraining.delete('/:id', authentication,controllerTraining.deleteByIdProductosApi)
-
-//PUT /:id -> recibe y actualiza un producto según su id.
-//routerTraining.put('/:id', authentication,controllerTraining.putByIdProductosApi)
 
 /*-----------------------------------------------------------*/
 

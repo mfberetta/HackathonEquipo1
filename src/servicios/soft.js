@@ -17,7 +17,8 @@ import { softDao } from '../daos/soft/index.js'
 
 export default {
 
-    getByQuery: async(query) => {
+    getByQuery: async(email) => {
+        const query = { "email": email }
         const soft = await softDao.getByQuery({ query });
         if (soft) return soft
         else return null

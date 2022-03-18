@@ -35,11 +35,11 @@ Se implemento un Swagger como parte de la documentacion de las APIs. Tambien nos
 Se implemento JSON Web Token en todos los metodos para la autenticacion e integridad de la comunicacion entre el front y el back. Dentro del JWT se incorporo el usuario que se logea y se decodifica en el back para trabajar con los datos del usuario.
 
 ## ✨ Equipo
-**Front**
+### Front
 1. 👨 Sergio Mann
 2. 👩 Lucia Seba
 3. 👩 Vero Vega
-**Back**
+### Back
 1. 👨 Marcelo Beretta
 2. 👨 Damian Tellerin
 3. 👨 Hernan Bueno

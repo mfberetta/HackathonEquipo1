@@ -35,7 +35,7 @@ class ContenedorMongoDb {
         return await this.coleccion.find(query)
     }
 
-    async getById(id) {
+     async getById(id) {
         //Recibe un id y devuelve registro con ese id, o null si no está.
         return await this.coleccion.findOne({ id: id }, { _id: 0, __v: 0 })
     }

@@ -22,8 +22,11 @@ React JS
 4. Corre el ambiente local `npm start`
 
 ## 💾 Heroku 
-`https://hackteam1.herokuapp.com/`
+### Front
 `https://techstation-equipo1.herokuapp.com/`
+### Back
+`https://hackteam1.herokuapp.com/api-docs`
+
 
 ## 🧾 Base de datos
 Por el momento toda nuestra base de datos esta hard-codeada, lo ideal seria tener un administrador

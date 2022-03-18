@@ -1,12 +1,15 @@
-import ContenedorMongoDb from "../contenedores/contenedorMongoDB.js"
+import ContenedorMongoDb from "../containers/contenedorMongoDB.js"
 
 class AccessDaoMongoDb extends ContenedorMongoDb {
 
     constructor() {
         super('access', {
             id: { type: String, required: true },
-            name: { type: String, required: true },
-            role: { type: String, required: true }
+            email: { type: String, required: true },
+            accesses: [{
+                name: { type: String, required: true },
+                description: { type: String, required: true }
+            }]
         })
     }
 }

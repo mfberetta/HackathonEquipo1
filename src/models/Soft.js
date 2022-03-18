@@ -1,4 +1,4 @@
-import ContenedorMongoDb from "../contenedores/contenedorMongoDB.js"
+import ContenedorMongoDb from "../containers/contenedorMongoDB.js"
 
 class SoftDaoMongoDb extends ContenedorMongoDb {
 

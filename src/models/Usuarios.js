@@ -1,4 +1,4 @@
-import ContenedorMongoDb from "../contenedores/contenedorMongoDB.js"
+import ContenedorMongoDb from "../containers/contenedorMongoDB.js"
 
 class UsuariosDaoMongoDb extends ContenedorMongoDb {
 
@@ -11,7 +11,7 @@ class UsuariosDaoMongoDb extends ContenedorMongoDb {
             phone: { type: String, required: true },
             role: { type: String, required: false },
             objectives: { type: String, required: false },
-            members:[{
+            members: [{
                 name: { type: String, required: false },
                 role: { type: String, required: false }
             }]

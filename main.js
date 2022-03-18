@@ -1,5 +1,4 @@
-//puesta en escucha del servidor
-import app from './server.js' //importa servidor
+import app from './server.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -8,4 +7,3 @@ const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`)
 })
 server.on("error", error => console.log(`Error en servidor: ${error}`))
-

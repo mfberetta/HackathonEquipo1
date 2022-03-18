@@ -1,12 +1,16 @@
-import ContenedorMongoDb from "../contenedores/contenedorMongoDB.js"
+import ContenedorMongoDb from "../containers/contenedorMongoDB.js"
 
 class TrainingDaoMongoDb extends ContenedorMongoDb {
 
     constructor() {
         super('training', {
             id: { type: String, required: true },
-            name: { type: String, required: true },
-            role: { type: String, required: true }
+            email: { type: String, required: true },
+            courses: [{
+                name: { type: String, required: false },
+                start: { type: Date, required: false },
+                duration: { type: String, required: false }
+            }]
         })
     }
 }

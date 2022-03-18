@@ -1,4 +1,4 @@
-import servicioSoft from '../servicios/soft.js'
+import servicioSoft from '../services/soft.js'
 
 export default {
 
@@ -6,9 +6,9 @@ export default {
     getByEmailSoftApi: async(req, res, next) => {
 
         try {
-            let user = req.user;
+            let user = req.user.email
             const soft = await servicioSoft.getByQuery(user)
-            if (soft) res.json(soft) //return credentials
+            if (soft) res.json(soft)
             else res.json({ error: 'soft no encontrado' })
 
         } catch (error) {
@@ -16,7 +16,7 @@ export default {
         }
     },
 
-    postSoftApi: async(req, res, next) => { //Agrega producto
+    postSoftApi: async(req, res, next) => {
         try {
             const id = await servicioSoft.save(req.body)
             if (id) res.json({ id: id })
@@ -26,7 +26,7 @@ export default {
         }
     },
 
-    deleteByIdSoftApi: async(req, res, next) => { //Elimina producto por id
+    deleteByIdSoftApi: async(req, res, next) => {
         try {
             let id = req.params.id;
             const resultado = await servicioSoft.deleteByIdProducto(id)
@@ -38,7 +38,7 @@ export default {
         }
     },
 
-    putByIdSoftApi: async(req, res, next) => { //Actualiza productos por id
+    putByIdSoftApi: async(req, res, next) => {
         try {
             let id = req.params.id;
             let softMod = req.body

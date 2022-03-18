@@ -1,3 +1,0 @@
-[2022-03-17T19:48:47.900] [ERROR] default - ReferenceError: acess is not defined
-    at getAccessApi (file:///C:/Users/Public/HackathonEquipo1/src/controllers/access.js:9:33)
-    at processTicksAndRejections (internal/process/task_queues.js:95:5)

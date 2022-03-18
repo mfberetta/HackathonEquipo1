@@ -4,7 +4,7 @@ export default {
     
     getAccessApi: async(req, res, next) => { //Devuelve acceso
         try{ 
-            const user = req.body.email
+            const user = req.user.email
             const access = await servicioAccess.getByQuery(user)
             if(access) res.json(access) //devuelve accesos
             else res.json({ error : 'accessos no encontrados' })

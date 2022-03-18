@@ -2,7 +2,8 @@ import { accessDao } from '../daos/access/index.js'
 
 export default {
     
-    getByQuery: async(query) => { //Devuelve accesos
+    getByQuery: async(email) => { //Devuelve accesos
+        const query = {'email': email}
         const access = await accessDao.getByQuery(query)
         if(access) return access
         else return null

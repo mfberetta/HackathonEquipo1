@@ -1,30 +1,13 @@
 # LOS SIMULADORES   ![Status badge](https://img.shields.io/badge/status-in%20progress-yellow)
 
-## 💻 Tecnologías utilizadas:
-React JS
-
-## 📡 Manejo de rutas:
--react-router-dom: V6.2.2
-
-## 📚 Librerías:
--Formik: Validación de datos ingresados en el formulario de Login. (https://formik.org/docs/api/useFormik)
-
-## ➿ Controles y UI:
--Primereact. (https://www.primefaces.org/primereact/)
-
-## 🔑 Conexión con el Backend:
--Axios, cliente HTTP simple basado en promesas para el navegador y node.js. (https://axios-http.com/)
 
 ## 🚀Instalacion
-1. Clona este proyecto desde `https://github.com/mfberetta/HackathonEquipo1.git` `https://github.com/SergioAlfMann/HackathonFrontEquipo1`
+1. Clona este proyecto desde `https://github.com/mfberetta/HackathonEquipo1.git` 
 2. Ve a la carpeta del proyecto `cd HackathonEquipo1`
 3. Instala las dependencias `npm i`
 4. Corre el ambiente local `npm start`
 
 ## 💾 Heroku 
-### Front
-`https://techstation-equipo1.herokuapp.com/`
-### Back
 `https://hackteam1.herokuapp.com/api-docs`
 
 

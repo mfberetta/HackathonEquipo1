@@ -4,6 +4,7 @@ export default {
     
     getByQuery: async(email) => { //Devuelve accesos
         const query = {'email': email}
+        
         const access = await accessDao.getByQuery(query)
         if(access) return access
         else return null

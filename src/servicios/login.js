@@ -20,7 +20,7 @@ export default {
         if (!/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(email)){
             return null //mail invalido
         }
-        usuario = await usuariosDao.getByEmail({'email':email}) //busca en la persistencia por email
+        usuario = await usuariosDao.getByQuery({'email':email}) //busca en la persistencia por email
         if (usuario.length != 0) {
             return null //usuario ya existe
         }
@@ -50,7 +50,7 @@ export default {
             config.setUserRol('admin')// usuario administrador
         }
         else{ //no es el usuario admin, valida usuario en persistencia
-            user = await usuariosDao.getByEmail({'email':email}) //buscar en la persistencia por email
+            user = await usuariosDao.getByQuery({'email':email}) //buscar en la persistencia por email
             if (user.length == 0) {
                 return null //usuario no registrado
             }

@@ -1,16 +1,14 @@
 import servicioSoft from '../servicios/soft.js'
 
 export default {
-    // getSoft: async(req, res) => { //vista de productos
-    //     return res.render('productos.ejs')
-    // },
-
+    
+    
     getByEmailSoftApi: async(req, res, next) => {
 
-
         try {
-            let email = req.user;
-            const soft = await servicioSoft.getByEmail(email)
+            let user = req.body.email;
+            console.log(user);
+            const soft = await servicioSoft.getByQuery(user)
             if (soft) res.json(soft) //return credentials
             else res.json({ error: 'soft no encontrado' })
 

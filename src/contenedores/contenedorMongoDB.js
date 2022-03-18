@@ -30,9 +30,9 @@ class ContenedorMongoDb {
         return await this.coleccion.find({}, { _id: 0, __v: 0 })
     }
 
-    async getByQuery(query) {
+    async getByQuery(query){ 
         //Devuelve según el email de la query.
-        return await this.coleccion.find(query)
+        return await this.coleccion.find(query,{_id:0,__v:0})
     }
 
     async getById(id) {

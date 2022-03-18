@@ -25,7 +25,7 @@ React JS
 ### Front
 `https://techstation-equipo1.herokuapp.com/`
 ### Back
-`https://hackteam1.herokuapp.com/`
+`https://hackteam1.herokuapp.com/api-docs`
 
 
 ## 🧾 Base de datos

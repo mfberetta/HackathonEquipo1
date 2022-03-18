@@ -9,7 +9,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(cors())
-
+/*-----------------------------------------------------------*/
+//Swagger
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+const swaggerDocument = YAML.load('./swagger.yaml');
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 /*-----------------------------------------------------------*/
 //Router for API access
 import routerAccess from './src/routes/access.js'

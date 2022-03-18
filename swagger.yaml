@@ -1,0 +1,260 @@
+openapi: 3.0.0
+servers:
+  - url: 'https://hackteam1.herokuapp.com'
+    description: Swagger del hackteam1
+info:
+  description: Swagger del hackteam1
+  version: '1.0'
+  title: Swagger de on boarding
+  contact:
+    email: mfberetta@gmail.com
+tags:
+  - name: Default
+    description: tag default
+paths:
+  /login:
+    post:
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: jgonzalez@teco.com.ar
+                password: '1234'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: login ok
+          content:
+            application/json:
+              schema:
+                example:
+                  email: jgonzalez@teco.com.ar
+                  access_token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impnb256YWxlekB0ZWNvLmNvbS5hciIsImlhdCI6MTY0NzYwNjQxNiwiZXhwIjoxNjQ3NjY2NDE2fQ.s-sUFsK88XLlYS_XRHsLPewf2Zajr_XDWJ6LvT3ARsE
+                  role: Teach Leader
+                  objectives: Desarrollar Software
+                  members:
+                    - name: Luis Perez
+                      role: Manager
+                      _id: 6233dd496d6a891a34ff0ed4
+                    - name: Maria Esperanza
+                      role: Teach Engennier
+                      _id: 6233dd496d6a891a34ff0ed5
+  /registro:
+    post:
+      summary: Registro
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: jgonza1@teco.com.ar
+                password: '1234'
+                password1: '1234'
+                name: Jose Luis
+                lastname: Gonzalez
+                phone: '+541144441234'
+                role: Teach Leader
+                objectives: Desarrollar Software
+                members:
+                  - name: Luis Perez
+                    role: Manager
+                  - name: Maria Esperanza
+                    role: Teach Engennier
+      tags:
+        - Default
+      responses:
+        '200':
+          description: Registro ok
+          content:
+            application/json:
+              schema:
+                example:
+                  email: jgonza1@teco.com.ar
+                  access_token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impnb256YTFAdGVjby5jb20uYXIiLCJpYXQiOjE2NDc2MDY4MTQsImV4cCI6MTY0NzY2NjgxNH0.kpLmPjuZOfnw9zy93Q6YYAokKqngxgxfWsAj1qmN9G4
+  /api/access:
+    get:
+      summary: >-
+        Obtiene todos los accesos de un usuario (el usuario lo obtiene del
+        decode del token)
+      parameters:
+        - in: header
+          name: authorization
+          schema:
+            type: string
+            example: 'Bearer {{ACCESS_TOKEN}}'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: >-
+            Obtiene todos los accesos de un usuario (el usuario lo obtiene del
+            decode del token) ok
+          content:
+            application/json:
+              schema:
+                example:
+                  - _id: 6233ddbb6d6a891a34ff0eda
+                    id: c0554cc3-dc75-4fd3-954f-b452149a326a
+                    email: jgonzalez@teco.com.ar
+                    accesses:
+                      - name: VPN
+                        description: VPN para conectarse a la red de Telecom
+                        _id: 6233ddbb6d6a891a34ff0edb
+                      - name: Mediador
+                        description: Escritorio remoto para ingresar a los sistemas
+                        _id: 6233ddbb6d6a891a34ff0edc
+                      - name: TuID
+                        description: Sistema para solicitar accesos a sistemas
+                        _id: 6233ddbb6d6a891a34ff0edd
+                      - name: JIRA
+                        description: Sistema metodología AGILE
+                        _id: 6233ddbb6d6a891a34ff0ede
+                    __v: 0
+    post:
+      summary: Crea accesos para un usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: jgonzalez@teco.com.ar
+                accesses:
+                  - name: VPN
+                    description: VPN para conectarse a la red de Telecom
+                  - name: Mediador
+                    description: Escritorio remoto para ingresar a los sistemas
+                  - name: TuID
+                    description: Sistema para solicitar accesos a sistemas
+                  - name: JIRA
+                    description: Sistema metodología AGILE
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            example: 'Bearer {{ACCESS_TOKEN}}'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: Crea accesos para un usuario ok
+          content:
+            application/json:
+              schema:
+                example:
+                  id: afc6aaf1-43a2-42e1-8076-6ef38738225f
+  /api/soft:
+    get:
+      summary: >-
+        Obtiene todos los soft de un usuario (el usuario lo obtiene del decode
+        del token)
+      parameters:
+        - in: header
+          name: authorization
+          schema:
+            type: string
+            example: 'Bearer {{ACCESS_TOKEN}}'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: >-
+            Obtiene todos los soft de un usuario (el usuario lo obtiene del
+            decode del token) ok
+          content:
+            application/json:
+              schema:
+                example:
+                  - _id: 6233f3094c3988e84b9756cf
+                    id: 38110a5f-2af6-4186-9726-9c0e20d53a24
+                    email: jgonzalez@teco.com.ar
+                    softs:
+                      - name: Teams
+                        role: Manager
+                        _id: 6233f3094c3988e84b9756d0
+                      - name: Jira
+                        role: Manager
+                        _id: 6233f3094c3988e84b9756d1
+                    __v: 0
+    post:
+      summary: Crea soft para un usuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: jgonzalez@teco.com.ar
+                softs:
+                  - name: Teams
+                    role: Manager
+                    _id: 6233f3094c3988e84b9756d0
+                  - name: Jira
+                    role: Manager
+                    _id: 6233f3094c3988e84b9756d1
+      parameters:
+        - in: header
+          name: Authorization
+          schema:
+            type: string
+            example: 'Bearer {{ACCESS_TOKEN}}'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: Crea soft para un usuario ok
+          content:
+            application/json:
+              schema:
+                example:
+                  id: 2dc7fba4-ffb4-456c-9913-7bb6b1b508ff
+  /api/training:
+    get:
+      summary: >-
+        Obtiene todos los training de un usuario (el usuario lo obtiene del
+        decode del token)
+      parameters:
+        - in: header
+          name: authorization
+          schema:
+            type: string
+            example: 'Bearer {{ACCESS_TOKEN}}'
+      tags:
+        - Default
+      responses:
+        '200':
+          description: >-
+            Obtiene todos los training de un usuario (el usuario lo obtiene del
+            decode del token) ok
+          content:
+            application/json:
+              schema:
+                example:
+                  - _id: 6233ed796668d871823d78a3
+                    email: jgonzalez@teco.com.ar
+                    courses:
+                      - _id: 62347e62a76908ed2cb62648
+                        name: Advanced Oracle Managment
+                        start: '2022-05-01T03:00:00.000Z'
+                        duration: '10'
+                        type: Optional
+                      - _id: 62347e62a76908ed2cb62649
+                        name: FronteEnd
+                        start: '2022-07-01T03:00:00.000Z'
+                        duration: '15'
+                        type: Critical
+                      - _id: 62347e62a76908ed2cb6264a
+                        name: Python
+                        start: '2022-08-01T03:00:00.000Z'
+                        duration: '1'
+                        type: Optional
+components:
+  securitySchemes: {}

@@ -19,6 +19,5 @@ routerLogin.get('/login-error', controllerLogin.getLoginError)
 /*-----------------------------------------------------------*/
 //Ecommerce
 routerLogin.get('/auth', authentication)
-routerLogin.get('/', controllerLogin.getMain)
 
 export default routerLogin

@@ -1,0 +1,751 @@
+{
+	"info": {
+		"_postman_id": "5cd1db39-50aa-4e78-82b7-d52beac06254",
+		"name": "Hackatlon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);\r",
+									"postman.setEnvironmentVariable(\"EMAIL\", JSON.parse(responseBody).email);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"jgonzalez@teco.com.ar\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/login",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"jgonzalez@teco.com.ar\",\r\n    \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/login",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1c1-WyLf/WeSb7/iJNEOaZ9IDGWZ530\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:26:56 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"jgonzalez@teco.com.ar\",\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impnb256YWxlekB0ZWNvLmNvbS5hciIsImlhdCI6MTY0NzYwNjQxNiwiZXhwIjoxNjQ3NjY2NDE2fQ.s-sUFsK88XLlYS_XRHsLPewf2Zajr_XDWJ6LvT3ARsE\",\n    \"role\": \"Teach Leader\",\n    \"objectives\": \"Desarrollar Software\",\n    \"members\": [\n        {\n            \"name\": \"Luis Perez\",\n            \"role\": \"Manager\",\n            \"_id\": \"6233dd496d6a891a34ff0ed4\"\n        },\n        {\n            \"name\": \"Maria Esperanza\",\n            \"role\": \"Teach Engennier\",\n            \"_id\": \"6233dd496d6a891a34ff0ed5\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Registro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", JSON.parse(responseBody).access_token);\r",
+									"postman.setEnvironmentVariable(\"EMAIL\", JSON.parse(responseBody).email);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jgonza1@teco.com.ar\",\r\n    \"password\": \"1234\",\r\n    \"password1\": \"1234\",\r\n    \"name\": \"Jose Luis\",\r\n    \"lastname\": \"Gonzalez\",\r\n    \"phone\": \"+541144441234\",\r\n    \"role\": \"Teach Leader\",\r\n    \"objectives\": \"Desarrollar Software\",\r\n    \"members\":[{\"name\": \"Luis Perez\", \"role\": \"Manager\"},{\"name\": \"Maria Esperanza\", \"role\": \"Teach Engennier\"}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/registro",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"registro"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Registro ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"jgonza1@teco.com.ar\",\r\n    \"password\": \"1234\",\r\n    \"password1\": \"1234\",\r\n    \"name\": \"Jose Luis\",\r\n    \"lastname\": \"Gonzalez\",\r\n    \"phone\": \"+541144441234\",\r\n    \"role\": \"Teach Leader\",\r\n    \"objectives\": \"Desarrollar Software\",\r\n    \"members\":[{\"name\": \"Luis Perez\", \"role\": \"Manager\"},{\"name\": \"Maria Esperanza\", \"role\": \"Teach Engennier\"}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/registro",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"registro"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"d9-Zon+mTAnUCmznDi2qXjTTORfWiU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:33:34 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"jgonza1@teco.com.ar\",\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impnb256YTFAdGVjby5jb20uYXIiLCJpYXQiOjE2NDc2MDY4MTQsImV4cCI6MTY0NzY2NjgxNH0.kpLmPjuZOfnw9zy93Q6YYAokKqngxgxfWsAj1qmN9G4\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Access",
+			"item": [
+				{
+					"name": "Obtiene todos los accesos de un usuario (el usuario lo obtiene del decode del token)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/access",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"access"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obtiene todos los accesos de un usuario (el usuario lo obtiene del decode del token) ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVER}}/api/access",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"access"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "552"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"228-Up/Z1gbdQmhkZubK+uDZG7CI6v8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:34:16 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6233ddbb6d6a891a34ff0eda\",\n        \"id\": \"c0554cc3-dc75-4fd3-954f-b452149a326a\",\n        \"email\": \"jgonzalez@teco.com.ar\",\n        \"accesses\": [\n            {\n                \"name\": \"VPN\",\n                \"description\": \"VPN para conectarse a la red de Telecom\",\n                \"_id\": \"6233ddbb6d6a891a34ff0edb\"\n            },\n            {\n                \"name\": \"Mediador\",\n                \"description\": \"Escritorio remoto para ingresar a los sistemas\",\n                \"_id\": \"6233ddbb6d6a891a34ff0edc\"\n            },\n            {\n                \"name\": \"TuID\",\n                \"description\": \"Sistema para solicitar accesos a sistemas\",\n                \"_id\": \"6233ddbb6d6a891a34ff0edd\"\n            },\n            {\n                \"name\": \"JIRA\",\n                \"description\": \"Sistema metodología AGILE\",\n                \"_id\": \"6233ddbb6d6a891a34ff0ede\"\n            }\n        ],\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crea accesos para un usuario",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"postman.setEnvironmentVariable(\"CARRITO_ID\", JSON.parse(responseBody).id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jgonzalez@teco.com.ar\",\r\n    \"accesses\":[\r\n        {\"name\": \"VPN\", \"description\": \"VPN para conectarse a la red de Telecom\"},\r\n        {\"name\": \"Mediador\", \"description\": \"Escritorio remoto para ingresar a los sistemas\"},\r\n        {\"name\": \"TuID\", \"description\": \"Sistema para solicitar accesos a sistemas\"},\r\n        {\"name\": \"JIRA\", \"description\": \"Sistema metodología AGILE\"}\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/access",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"access"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Crea accesos para un usuario ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"jgonzalez@teco.com.ar\",\r\n    \"accesses\":[\r\n        {\"name\": \"VPN\", \"description\": \"VPN para conectarse a la red de Telecom\"},\r\n        {\"name\": \"Mediador\", \"description\": \"Escritorio remoto para ingresar a los sistemas\"},\r\n        {\"name\": \"TuID\", \"description\": \"Sistema para solicitar accesos a sistemas\"},\r\n        {\"name\": \"JIRA\", \"description\": \"Sistema metodología AGILE\"}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/api/access",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"access"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2d-Xgv+xr59EGvIdd7ZJEz4oApFs3g\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:34:38 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"afc6aaf1-43a2-42e1-8076-6ef38738225f\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Soft",
+			"item": [
+				{
+					"name": "Obtiene todos los soft de un usuario (el usuario lo obtiene del decode del token)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/soft",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"soft"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obtiene todos los soft de un usuario (el usuario lo obtiene del decode del token) ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVER}}/api/soft",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"soft"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "263"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"107-61zxYEzP5Xlds6byoRcILw6Gt6E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:42:46 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6233f3094c3988e84b9756cf\",\n        \"id\": \"38110a5f-2af6-4186-9726-9c0e20d53a24\",\n        \"email\": \"jgonzalez@teco.com.ar\",\n        \"softs\": [\n            {\n                \"name\": \"Teams\",\n                \"role\": \"Manager\",\n                \"_id\": \"6233f3094c3988e84b9756d0\"\n            },\n            {\n                \"name\": \"Jira\",\n                \"role\": \"Manager\",\n                \"_id\": \"6233f3094c3988e84b9756d1\"\n            }\n        ],\n        \"__v\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crea soft para un usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"jgonzalez@teco.com.ar\",\r\n        \"softs\": [\r\n            {\r\n                \"name\": \"Teams\",\r\n                \"role\": \"Manager\",\r\n                \"_id\": \"6233f3094c3988e84b9756d0\"\r\n            },\r\n            {\r\n                \"name\": \"Jira\",\r\n                \"role\": \"Manager\",\r\n                \"_id\": \"6233f3094c3988e84b9756d1\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER}}/api/soft",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"soft"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Crea soft para un usuario ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"email\": \"jgonzalez@teco.com.ar\",\r\n        \"softs\": [\r\n            {\r\n                \"name\": \"Teams\",\r\n                \"role\": \"Manager\",\r\n                \"_id\": \"6233f3094c3988e84b9756d0\"\r\n            },\r\n            {\r\n                \"name\": \"Jira\",\r\n                \"role\": \"Manager\",\r\n                \"_id\": \"6233f3094c3988e84b9756d1\"\r\n            }\r\n        ]\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER}}/api/soft",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"soft"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2d-5pTXNxk8hfrB0CIU9SsGp1zRYLA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:41:49 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"2dc7fba4-ffb4-456c-9913-7bb6b1b508ff\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Training",
+			"item": [
+				{
+					"name": "Obtiene todos los training de un usuario (el usuario lo obtiene del decode del token)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER}}/api/training",
+							"host": [
+								"{{SERVER}}"
+							],
+							"path": [
+								"api",
+								"training"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obtiene todos los training de un usuario (el usuario lo obtiene del decode del token) ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "Bearer {{ACCESS_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{SERVER}}/api/training",
+									"host": [
+										"{{SERVER}}"
+									],
+									"path": [
+										"api",
+										"training"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "461"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"1cd-qFM2cMU+ckD/+1pCVJNbZl+n0TM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Mar 2022 12:43:14 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6233ed796668d871823d78a3\",\n        \"email\": \"jgonzalez@teco.com.ar\",\n        \"courses\": [\n            {\n                \"_id\": \"62347e62a76908ed2cb62648\",\n                \"name\": \"Advanced Oracle Managment\",\n                \"start\": \"2022-05-01T03:00:00.000Z\",\n                \"duration\": \"10\",\n                \"type\": \"Optional\"\n            },\n            {\n                \"_id\": \"62347e62a76908ed2cb62649\",\n                \"name\": \"FronteEnd\",\n                \"start\": \"2022-07-01T03:00:00.000Z\",\n                \"duration\": \"15\",\n                \"type\": \"Critical\"\n            },\n            {\n                \"_id\": \"62347e62a76908ed2cb6264a\",\n                \"name\": \"Python\",\n                \"start\": \"2022-08-01T03:00:00.000Z\",\n                \"duration\": \"1\",\n                \"type\": \"Optional\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "email_usuario",
+			"value": ""
+		}
+	]
+}
